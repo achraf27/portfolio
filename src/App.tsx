@@ -1,6 +1,6 @@
 import  {useState, useEffect } from 'react';
 import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
-import emailjs from "@emailjs/browser";
+
 
 // 🎯 CONFIGURATION - Modifiez vos informations ici
 const CONFIG = {
