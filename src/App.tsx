@@ -57,7 +57,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
+    localStorage.setItem('darkMode', darkMode.toString());
     if (darkMode) {
   document.documentElement.classList.add('dark');
     } else {
@@ -262,7 +262,7 @@ export default function App() {
         <label className="block font-semibold mb-2">Message</label>
         <textarea 
           name="message" 
-          rows="5" 
+          rows={5}
           required
           className={`w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 transition ${
             darkMode 
