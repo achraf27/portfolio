@@ -18,7 +18,7 @@ const CONFIG = {
       id: 1,
       title: "Logiciel de gestion d'inventaire",
       description: "Logiciel full-stack de gestion d’inventaire avec suivi des stocks, CRUD produits et interface intuitive",
-      tech: ["React", "Express.js","Node.js", "SQL", "Tailwind"],
+      tech: ["React", "Express.js","Node.js", "SQL", "Tailwind","JWT"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       github: "https://github.com/achraf27/inventory-app"
     },
@@ -58,7 +58,7 @@ skillsCategories: [
     },
     {
       title: "Bases de données",
-      skills: ["MongoDB", "PostgreSQL"]
+      skills: ["PostgreSQL","MongoDB"]
     },
     {
       title: "Outils/Méthodologies",
@@ -104,9 +104,7 @@ export default function App() {
         darkMode ? 'bg-gray-900/95 border-gray-800' : 'bg-white/95 border-gray-200'
       } backdrop-blur-sm border-b`}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-600 bg-clip-text text-transparent">
-            {"Portfolio"}
-          </h1>
+         
           
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('home')} className="cursor-pointer  hover:text-orange-500 transition">Accueil</button>
@@ -221,9 +219,7 @@ export default function App() {
 <section id="skills" className="py-24 px-6 transition-colors duration-500">
   <div className="max-w-6xl mx-auto text-center">
     <h3 className="text-4xl md:text-5xl font-extrabold mb-16">
-      <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-        Compétences
-      </span>
+     <h3 className="text-4xl font-bold mb-12 text-center">Mes Compétences</h3>
     </h3>
 
     {/* Grille fluide qui s'adapte au contenu */}
