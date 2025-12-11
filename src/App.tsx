@@ -104,7 +104,9 @@ export default function App() {
         darkMode ? 'bg-gray-900/95 border-gray-800' : 'bg-white/95 border-gray-200'
       } backdrop-blur-sm border-b`}>
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-         
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-600 bg-clip-text text-transparent">
+            {""}
+          </h1>
           
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('home')} className="cursor-pointer  hover:text-orange-500 transition">Accueil</button>
