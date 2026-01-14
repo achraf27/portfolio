@@ -1,8 +1,9 @@
 import  {useState, useEffect } from 'react';
 import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
 
+import inventory from './assets/inventory.png'
 
-// 🎯 CONFIGURATION - Modifiez vos informations ici
+
 const CONFIG = {
   name: "AIT DAOUD  Achraf",
   title: "Développeur Full Stack",
@@ -11,24 +12,53 @@ const CONFIG = {
   github: "https://github.com/achraf27",
   linkedin: "https://www.linkedin.com/in/achraf-ait-daoud-129a04355/",
   
-  // 📁 Ajoutez vos projets ici
   projects: [
    
     {
       id: 1,
       title: "Logiciel de gestion d'inventaire",
       description: "Logiciel full-stack de gestion d’inventaire avec suivi des stocks, CRUD produits et interface intuitive",
-      tech: ["React", "Express.js","Node.js", "SQL", "Tailwind","JWT"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      github: "https://github.com/achraf27/inventory-app"
+      tech: ["React.js", "Express.js","Node.js", "PostgreSQL", "Bootstrap","JWT"],
+      image: inventory,
+      github: "https://github.com/achraf27/inventory-app",
+      Lien: "https://inventory-app-b1xc-kvtk657ev-achraf27s-projects.vercel.app",
+
+      pourquoi: `
+      J'ai realisé ce projet afin de mettre en avant ce dont je suis capable de faire.
+      
+      Ce fût un veritable challenge pour moi, 
+      que ce soit au niveau architectural, technique, la mise en lien entre back-end/front-end ainsi que le deployement.
+
+      J'en ressort en ayant davantage confiance en mes capacités.
+
+      Si vous souhaitez tester veuillez vous logger avec ces identifiants:
+      
+      Rôle: Admin 
+      Nom d'utilisateur : JeanDupont
+      Mot de passe : password123
+
+      Rôle : Utilisateur
+      Nom d'utilisateur : MarieMartin 
+      Mot de passe : password123`
+
+      ,
     },
     {
       id: 2,
-      title: "Application de messagerie instantanée",
+      title: "Application de messagerie instantanée (en cours..)",
       description: "Application de chat en temps réel avec gestion des utilisateurs et échanges instantanés de messages.",
       tech: ["React Native", "Express.js", "PostgreSQL", "Socket.io"],
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
       github: "https://github.com/achraf27/socket_chat_app.git",
+      pourquoi: `
+      J'ai toujours été curieux de savoir comment les applications de messagerie instantanées fonctionnaient,
+      cette intérogation m'a ainsi donc poussé à essayer d'en développer une par mes propres moyens.
+      
+      Comme indiqué sur le titre ce projet n'est pas encore achevé. 
+      `
+
+
+
     },
      {
       id: 3,
@@ -37,7 +67,15 @@ const CONFIG = {
       tech: ["JavaScript", "Chrome API"],
       image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
       github: "",
-      demo: "https://chromewebstore.google.com/detail/pageblocker/bclopoicblmkamoagdllhlgaeajhoppi"
+      Lien: "https://chromewebstore.google.com/detail/pageblocker/bclopoicblmkamoagdllhlgaeajhoppi",
+      pourquoi: `
+      J'ai demarré ce projet dans le but de repondre à un besoin que j'ai moi même ressenti: celui de pouvoir bloquer 
+      des pages susceptibles de me distraire. Bien qu'il y ai deja des outils a disposition j'ai quand même décide de créer l'outil
+      dans un esprit de challenge et pour pouvoir également monter en compètence.
+
+      Au final j'ai pu produire un outil fonctionnel, que j'ai par ailleurs publié sur le chrome store.
+      `
+
     },
   ],
 
@@ -46,15 +84,15 @@ const CONFIG = {
 skillsCategories: [
     {
       title: "Langages",
-      skills: ["C++", "Python", "Java", "JavaScript / TypeScript", "Dart", "PHP"]
+      skills: ["JavaScript / TypeScript","C++", "Python", "Java", "Dart", "PHP"]
     },
     {
       title: "Frontend",
-      skills: ["React", "Angular", "Flutter", "Tailwind CSS"]
+      skills: ["React.js", "Angular", "Flutter", "Tailwind CSS","Bootstrap"]
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express.js", "Nest.js", "Laravel"]
+      skills: ["Express.js", "Node.js", "Laravel" ,"Nest.js",]
     },
     {
       title: "Bases de données",
@@ -71,6 +109,8 @@ skillsCategories: [
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+
 
   
 
@@ -103,7 +143,7 @@ export default function App() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         darkMode ? 'bg-gray-900/95 border-gray-800' : 'bg-white/95 border-gray-200'
       } backdrop-blur-sm border-b`}>
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
 
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('home')} className="cursor-pointer  hover:text-orange-500 transition">Accueil</button>
@@ -117,6 +157,8 @@ export default function App() {
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
+
+          
 
           <div className="md:hidden flex items-center gap-4">
             <button onClick={() => setDarkMode(!darkMode)} className="p-2">
@@ -173,10 +215,13 @@ export default function App() {
           <h3 className="text-4xl font-bold mb-12 text-center">Mes Projets</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CONFIG.projects.map((project) => (
-              <div key={project.id} 
-                className={`rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 ${
-                  darkMode ? 'bg-gray-800' : 'bg-white'
-                } shadow-xl`}>
+             <div
+                  key={project.id}
+                  onClick={() => setSelectedProject(project)}
+                  className={`cursor-pointer rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  } shadow-xl`}
+                >
                 <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h4 className="text-xl font-bold mb-2">{project.title}</h4>
@@ -200,10 +245,10 @@ export default function App() {
                     <Github size={18} /> Code
                   </a>
                 )}
-                {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer"
+                {project.Lien && (
+                  <a href={project.Lien} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 text-orange-500 hover:text-orange-600 transition">
-                    <ExternalLink size={18} /> Demo
+                    <ExternalLink size={18} /> Lien
                   </a>
                 )}
                   </div>
@@ -283,6 +328,90 @@ export default function App() {
           © 2025 {CONFIG.name}. Tous droits réservés.
         </p>
       </footer>
+
+      {/*Modal section*/}
+      {selectedProject && (
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+        onClick={() => setSelectedProject(null)}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={`max-w-lg w-full mx-4 rounded-2xl p-6 shadow-2xl ${
+            darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+          }`}
+        >
+          <img
+            src={selectedProject.image}
+            alt={selectedProject.title}
+            className="w-full h-48 object-cover rounded-xl mb-4"
+          />
+
+          <h3 className="text-2xl font-bold mb-2">
+            {selectedProject.title}
+          </h3>
+
+          <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            {selectedProject.description}
+          </p>
+
+          <h2 className="font-bold">Pourquoi ?</h2>
+          <p className={`mb-4 whitespace-pre-line ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            
+            {selectedProject.pourquoi}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {selectedProject.tech.map((tech: string, idx: number) => (
+              <span
+                key={idx}
+                className={`px-3 py-1 rounded-full text-sm ${
+                  darkMode
+                    ? 'bg-gray-700 text-orange-400'
+                    : 'bg-orange-100 text-orange-600'
+                }`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex justify-between items-center">
+            <div className="flex gap-4">
+              {selectedProject.github && (
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
+                >
+                  <Github size={18} /> Code
+                </a>
+              )}
+              {selectedProject.Lien && (
+                <a
+                  href={selectedProject.Lien}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
+                >
+                  <ExternalLink size={18} /> Lien
+                </a>
+              )}
+            </div>
+
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="text-sm px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
     </div>
+    
   );
 }
