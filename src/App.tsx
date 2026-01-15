@@ -14,69 +14,147 @@ const CONFIG = {
   
   projects: [
    
-    {
+  {
       id: 1,
       title: "Logiciel de gestion d'inventaire",
       description: "Logiciel full-stack de gestion d’inventaire avec suivi des stocks, CRUD produits et interface intuitive",
-      tech: ["React.js", "Express.js","Node.js", "PostgreSQL", "Bootstrap","JWT"],
+      tech: [
+        "React.js",
+        "Express.js",
+        "Node.js",
+        "PostgreSQL",
+        "Bootstrap",
+        "JWT"
+      ],
       image: inventory,
       github: "https://github.com/achraf27/inventory-app",
       Lien: "https://inventory-app-b1xc-kvtk657ev-achraf27s-projects.vercel.app",
 
+      features: [
+        "Authentification sécurisée avec gestion des rôles (Admin / Utilisateur)",
+        "CRUD complet des produits",
+        "Suivi des stocks en temps réel",
+        "Interface responsive et intuitive",
+        "Gestion des utilisateurs"
+      ],
+
+      challenges: [
+        "Mise en place d’une architecture full-stack cohérente",
+        "Gestion de l’authentification et des autorisations avec JWT",
+        "Communication sécurisée entre le frontend et le backend",
+        "Déploiement et configuration de l’application en production"
+      ],
+
+      competences: [
+        "Architecture full-stack",
+        "Développement d’API REST",
+        "Authentification JWT",
+        "Gestion de base de données PostgreSQL",
+        "Déploiement d’application web"
+      ],
+
       pourquoi: `
-      J'ai realisé ce projet afin de mettre en avant ce dont je suis capable de faire.
-      
-      Ce fût un veritable challenge pour moi, 
-      que ce soit au niveau architectural, technique, la mise en lien entre back-end/front-end ainsi que le deployement.
+    J'ai réalisé ce projet afin de démontrer concrètement mes compétences en développement full-stack.
 
-      J'en ressort en ayant davantage confiance en mes capacités.
+    Ce projet a représenté un véritable challenge, notamment sur les aspects architecturaux, 
+    la communication entre le frontend et le backend, ainsi que le déploiement de l’application.
 
-      Si vous souhaitez tester veuillez vous logger avec ces identifiants:
-      
-      Rôle: Admin 
-      Nom d'utilisateur : JeanDupont
-      Mot de passe : password123
+    Il m’a permis de gagner en confiance et de mieux comprendre les problématiques rencontrées dans une application professionnelle.
 
-      Rôle : Utilisateur
-      Nom d'utilisateur : MarieMartin 
-      Mot de passe : password123`
+    Identifiants de test :
 
-      ,
+    Rôle : Admin  
+    Nom d'utilisateur : JeanDupont  
+    Mot de passe : password123  
+
+    Rôle : Utilisateur  
+    Nom d'utilisateur : MarieMartin  
+    Mot de passe : password123
+    `
     },
-    {
+
+ {
       id: 2,
-      title: "Application de messagerie instantanée (en cours..)",
-      description: "Application de chat en temps réel avec gestion des utilisateurs et échanges instantanés de messages.",
-      tech: ["React Native", "Express.js", "PostgreSQL", "Socket.io"],
+      title: "Application de messagerie instantanée (en cours)",
+      description: "Application de chat en temps réel avec gestion des utilisateurs et échanges instantanés de messages",
+      tech: [
+        "React Native",
+        "Express.js",
+        "PostgreSQL",
+        "Socket.io"
+      ],
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
       github: "https://github.com/achraf27/socket_chat_app.git",
+
+      features: [
+        "Messagerie en temps réel via WebSocket",
+        "Gestion des utilisateurs",
+        "Envoi et réception instantanée de messages",
+        "Persistance des messages en base de données"
+      ],
+
+      challenges: [
+        "Compréhension du fonctionnement des WebSockets",
+        "Gestion des connexions en temps réel",
+        "Synchronisation entre frontend mobile et backend",
+        "Structuration d’un projet React Native"
+      ],
+
+      competences: [
+        "Communication temps réel avec Socket.io",
+        "Développement mobile avec React Native",
+        "Gestion d’API backend",
+        "Modélisation de base de données"
+      ],
+
       pourquoi: `
-      J'ai toujours été curieux de savoir comment les applications de messagerie instantanées fonctionnaient,
-      cette intérogation m'a ainsi donc poussé à essayer d'en développer une par mes propres moyens.
-      
-      Comme indiqué sur le titre ce projet n'est pas encore achevé. 
+      J’ai toujours été curieux de comprendre le fonctionnement des applications de messagerie instantanée.
+
+      Ce projet est né de cette curiosité et m’a permis d’explorer les problématiques liées 
+      au temps réel, à la gestion des connexions et aux échanges de données instantanés.
+
+      Le projet est encore en cours de développement et continue d’évoluer au fil de mes apprentissages.
       `
+      },
+
+      {
+        id: 3,
+        title: "PageBlocker",
+        description: "Une extension chrome permettant de bloquer des pages webs ",
+        tech: ["JavaScript", "Chrome API"],
+        image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+        github: "",
+        Lien: "https://chromewebstore.google.com/detail/pageblocker/bclopoicblmkamoagdllhlgaeajhoppi",
+        features: [
+        "Blocage de pages par URL",
+        "Activation / désactivation rapide depuis l'icône",
+        "Liste personnalisée de sites bloqués",
+        "Redirection vers une page neutre"
+      ],
+      challenges: [
+        "Comprendre et utiliser l'API Chrome pour intercepter les requêtes",
+        "Gérer la persistance des données via le stockage local",
+        "Créer une UX simple malgré les contraintes des extensions Chrome"
+        ],
+        
+        competences: [
+          "Manipulation des Chrome Extensions API",
+          "JavaScript événementiel",
+          "Gestion d'état local",
+          "Déploiement sur le Chrome Web Store"
+        ],
 
 
 
-    },
-     {
-      id: 3,
-      title: "PageBlocker",
-      description: "Une extension chrome permettant de bloquer des pages webs ",
-      tech: ["JavaScript", "Chrome API"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-      github: "",
-      Lien: "https://chromewebstore.google.com/detail/pageblocker/bclopoicblmkamoagdllhlgaeajhoppi",
-      pourquoi: `
-      J'ai demarré ce projet dans le but de repondre à un besoin que j'ai moi même ressenti: celui de pouvoir bloquer 
-      des pages susceptibles de me distraire. Bien qu'il y ai deja des outils a disposition j'ai quand même décide de créer l'outil
-      dans un esprit de challenge et pour pouvoir également monter en compètence.
+        pourquoi: `
+        J'ai demarré ce projet dans le but de repondre à un besoin que j'ai moi même ressenti: celui de pouvoir bloquer 
+        des pages susceptibles de me distraire. Bien qu'il y ai deja des outils a disposition j'ai quand même décide de créer l'outil
+        dans un esprit de challenge et pour pouvoir également monter en compètence.
 
-      Au final j'ai pu produire un outil fonctionnel, que j'ai par ailleurs publié sur le chrome store.
-      `
+        Au final j'ai pu produire un outil fonctionnel, que j'ai par ailleurs publié sur le chrome store.
+        `
 
-    },
+      },
   ],
 
 
@@ -330,88 +408,157 @@ export default function App() {
       </footer>
 
       {/*Modal section*/}
-      {selectedProject && (
-      <div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-        onClick={() => setSelectedProject(null)}
-      >
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className={`max-w-lg w-full mx-4 rounded-2xl p-6 shadow-2xl ${
-            darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
-          }`}
-        >
-          <img
-            src={selectedProject.image}
-            alt={selectedProject.title}
-            className="w-full h-48 object-cover rounded-xl mb-4"
-          />
+  {selectedProject && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+    onClick={() => setSelectedProject(null)}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className={`max-w-2xl w-full mx-4 rounded-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto ${
+        darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+      }`}
+    >
+      {/* Image */}
+      <img
+        src={selectedProject.image}
+        alt={selectedProject.title}
+        className="w-full h-56 object-cover rounded-xl mb-6"
+      />
 
-          <h3 className="text-2xl font-bold mb-2">
-            {selectedProject.title}
-          </h3>
+      {/* Titre */}
+      <h3 className="text-2xl font-bold mb-2">
+        {selectedProject.title}
+      </h3>
 
-          <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            {selectedProject.description}
-          </p>
+      {/* Description */}
+      <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+        {selectedProject.description}
+      </p>
 
-          <h2 className="font-bold">Pourquoi ?</h2>
-          <p className={`mb-4 whitespace-pre-line ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            
-            {selectedProject.pourquoi}
-          </p>
+      {/* Fonctionnalités */}
+      {selectedProject.features && (
+        <>
+          <h4 className="font-semibold mb-2">Fonctionnalités</h4>
+          <ul
+            className={`mb-4 list-disc list-inside ${
+              darkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            {selectedProject.features.map((feature: string, idx: number) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        </>
+      )}
 
+      {/* Défis techniques */}
+      {selectedProject.challenges && (
+        <>
+          <h4 className="font-semibold mb-2">Défis techniques</h4>
+          <ul
+            className={`mb-4 list-disc list-inside ${
+              darkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            {selectedProject.challenges.map((challenge: string, idx: number) => (
+              <li key={idx}>{challenge}</li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {/* Compétences acquises */}
+      {selectedProject.competences && (
+        <>
+          <h4 className="font-semibold mb-2">Compétences développées</h4>
           <div className="flex flex-wrap gap-2 mb-6">
-            {selectedProject.tech.map((tech: string, idx: number) => (
+            {selectedProject.competences.map((skill: string, idx: number) => (
               <span
                 key={idx}
-                className={`px-3 py-1 rounded-full text-sm ${
+                className={`px-3 py-1 rounded-full text-sm border ${
                   darkMode
-                    ? 'bg-gray-700 text-orange-400'
-                    : 'bg-orange-100 text-orange-600'
+                    ? 'border-gray-700 text-gray-300'
+                    : 'border-gray-300 text-gray-700'
                 }`}
               >
-                {tech}
+                {skill}
               </span>
             ))}
           </div>
+        </>
+      )}
 
-          <div className="flex justify-between items-center">
-            <div className="flex gap-4">
-              {selectedProject.github && (
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
-                >
-                  <Github size={18} /> Code
-                </a>
-              )}
-              {selectedProject.Lien && (
-                <a
-                  href={selectedProject.Lien}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
-                >
-                  <ExternalLink size={18} /> Lien
-                </a>
-              )}
-            </div>
-
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="text-sm px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
+      {/* Technologies */}
+      <h4 className="font-semibold mb-2">Technologies</h4>
+      <div className="flex flex-wrap gap-2 mb-6">
+        {selectedProject.tech.map((tech: string, idx: number) => (
+          <span
+            key={idx}
+            className={`px-3 py-1 rounded-full text-sm ${
+              darkMode
+                ? 'bg-gray-700 text-orange-400'
+                : 'bg-orange-100 text-orange-600'
+            }`}
+          >
+            {tech}
+          </span>
+        ))}
       </div>
-    )}
 
+      {/* Contexte / Pourquoi */}
+      {selectedProject.pourquoi && (
+        <>
+          <h4 className="font-semibold mb-2">Contexte du projet</h4>
+          <p
+            className={`mb-6 whitespace-pre-line ${
+              darkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            {selectedProject.pourquoi}
+          </p>
+        </>
+      )}
+
+      {/* Liens */}
+      <div className="flex justify-between items-center">
+        <div className="flex gap-4">
+          {selectedProject.github && (
+            <a
+              href={selectedProject.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
+            >
+              <Github size={18} />
+              Code
+            </a>
+          )}
+
+          {selectedProject.Lien && (
+            <a
+              href={selectedProject.Lien}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-orange-500 hover:text-orange-600"
+            >
+              <ExternalLink size={18} />
+              Lien
+            </a>
+          )}
+        </div>
+
+        <button
+          onClick={() => setSelectedProject(null)}
+          className="text-sm px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+        >
+          Fermer
+        </button>
+      </div>
     </div>
+  </div>
+)}
+</div>
     
   );
 }
