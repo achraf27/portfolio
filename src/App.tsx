@@ -2,6 +2,14 @@ import  {useState, useEffect } from 'react';
 import { Moon, Sun, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
 
 import inventory from './assets/inventory.png'
+import inventoryAdminSupplier from'./assets/inventory_admin_supplier_page.png'
+import inventoryAdminPage from'./assets/inventory_admin_page.png'
+import inventoryDashboard from'./assets/inventory_user_dashboard.png'
+import UserInventory from './assets/inventory_user_inventory.png'
+
+import pageblockerMain from './assets/pageblocker_1.png'
+import pageblocker2 from './assets/pageblocker_2.png'
+import pageblocker3 from './assets/pageblocker_3.png'
 
 
 const CONFIG = {
@@ -27,6 +35,13 @@ const CONFIG = {
         "JWT"
       ],
       image: inventory,
+      images: [
+        inventoryDashboard,
+        inventoryAdminPage,
+        UserInventory,
+        inventoryAdminSupplier
+      ],
+
       github: "https://github.com/achraf27/inventory-app",
       Lien: "https://inventory-app-b1xc-kvtk657ev-achraf27s-projects.vercel.app",
 
@@ -60,17 +75,17 @@ const CONFIG = {
     la communication entre le frontend et le backend, ainsi que le déploiement de l’application.
 
     Il m’a permis de gagner en confiance et de mieux comprendre les problématiques rencontrées dans une application professionnelle.
-
-    Identifiants de test :
-
-    Rôle : Admin  
-    Nom d'utilisateur : JeanDupont  
-    Mot de passe : password123  
-
-    Rôle : Utilisateur  
-    Nom d'utilisateur : MarieMartin  
-    Mot de passe : password123
-    `
+    `,
+    credentials: {
+    admin: {
+      username: "JeanDupont",
+      password: "password123"
+    },
+    user: {
+      username: "MarieMartin",
+      password: "password123"
+    }
+  }
     },
 
  {
@@ -122,14 +137,17 @@ const CONFIG = {
         title: "PageBlocker",
         description: "Une extension chrome permettant de bloquer des pages webs ",
         tech: ["JavaScript", "Chrome API"],
-        image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+        image: pageblockerMain,
+         images: [
+        pageblocker2,
+        pageblocker3
+      ],
         github: "",
         Lien: "https://chromewebstore.google.com/detail/pageblocker/bclopoicblmkamoagdllhlgaeajhoppi",
         features: [
         "Blocage de pages par URL",
         "Activation / désactivation rapide depuis l'icône",
         "Liste personnalisée de sites bloqués",
-        "Redirection vers une page neutre"
       ],
       challenges: [
         "Comprendre et utiliser l'API Chrome pour intercepter les requêtes",
@@ -188,9 +206,13 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [currentImage, setCurrentImage] = useState(0)
 
 
-  
+
+useEffect(() => {
+  setCurrentImage(0);
+}, [selectedProject]);
 
 
   useEffect(() => {
@@ -415,16 +437,71 @@ export default function App() {
   >
     <div
       onClick={(e) => e.stopPropagation()}
-      className={`max-w-2xl w-full mx-4 rounded-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto ${
+      className={`max-w-5xl w-full mx-4 rounded-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto ${
         darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
       }`}
     >
       {/* Image */}
-      <img
-        src={selectedProject.image}
-        alt={selectedProject.title}
-        className="w-full h-56 object-cover rounded-xl mb-6"
-      />
+    {selectedProject.images && selectedProject.images.length > 1 ? (
+  <div className="relative mb-6">
+    <img
+      src={selectedProject.images[currentImage]}
+      alt={`${selectedProject.title} - ${currentImage + 1}`}
+      className="ww-full max-h-[60vh] object-contain rounded-xl "
+    />
+
+    {/* Bouton précédent */}
+    <button
+      onClick={() =>
+        setCurrentImage(
+          currentImage === 0
+            ? selectedProject.images.length - 1
+            : currentImage - 1
+        )
+      }
+      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full"
+    >
+      ‹
+    </button>
+
+    {/* Bouton suivant */}
+    <button
+      onClick={() =>
+        setCurrentImage(
+          currentImage === selectedProject.images.length - 1
+            ? 0
+            : currentImage + 1
+        )
+      }
+      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full"
+    >
+      ›
+    </button>
+
+    {/* Indicateur */}
+    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+      {selectedProject.images.map((_: string, idx: number) => (
+        <span
+          key={idx}
+          className={`w-2 h-2 rounded-full ${
+            idx === currentImage
+              ? 'bg-orange-500'
+              : 'bg-white/50'
+          }`}
+        />
+      ))
+      
+      }
+    </div>
+  </div>
+) : (
+  <img
+    src={selectedProject.image}
+    alt={selectedProject.title}
+    className="w-full h-56 object-cover rounded-xl mb-6"
+  />
+)}
+
 
       {/* Titre */}
       <h3 className="text-2xl font-bold mb-2">
@@ -435,6 +512,22 @@ export default function App() {
       <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
         {selectedProject.description}
       </p>
+
+       {/* Contexte / Pourquoi */}
+      {selectedProject.pourquoi && (
+        <>
+          <h4 className="font-semibold mb-2">Contexte du projet</h4>
+          <p
+            className={`mb-6 whitespace-pre-line ${
+              darkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            {selectedProject.pourquoi}
+          </p>
+        </>
+      )}
+
+
 
       {/* Fonctionnalités */}
       {selectedProject.features && (
@@ -468,6 +561,33 @@ export default function App() {
         </>
       )}
 
+      {selectedProject.credentials && (
+  <>
+    <h4 className="font-semibold mb-2">Identifiants de test</h4>
+
+    <div
+      className={`whitespace-pre-line mb-4 ${
+        darkMode ? 'text-gray-400' : 'text-gray-600'
+      }`}
+    >
+      <p>
+        <strong>Admin</strong><br />
+        Nom d'utilisateur : {selectedProject.credentials.admin.username}<br />
+        Mot de passe : {selectedProject.credentials.admin.password}
+      </p>
+
+      <br />
+
+      <p>
+        <strong>Utilisateur</strong><br />
+        Nom d'utilisateur : {selectedProject.credentials.user.username}<br />
+        Mot de passe : {selectedProject.credentials.user.password}
+      </p>
+    </div>
+  </>
+)}
+
+
       {/* Compétences acquises */}
       {selectedProject.competences && (
         <>
@@ -489,6 +609,8 @@ export default function App() {
         </>
       )}
 
+      
+
       {/* Technologies */}
       <h4 className="font-semibold mb-2">Technologies</h4>
       <div className="flex flex-wrap gap-2 mb-6">
@@ -506,19 +628,7 @@ export default function App() {
         ))}
       </div>
 
-      {/* Contexte / Pourquoi */}
-      {selectedProject.pourquoi && (
-        <>
-          <h4 className="font-semibold mb-2">Contexte du projet</h4>
-          <p
-            className={`mb-6 whitespace-pre-line ${
-              darkMode ? 'text-gray-400' : 'text-gray-600'
-            }`}
-          >
-            {selectedProject.pourquoi}
-          </p>
-        </>
-      )}
+     
 
       {/* Liens */}
       <div className="flex justify-between items-center">
