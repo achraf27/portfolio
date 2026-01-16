@@ -43,7 +43,7 @@ const CONFIG = {
       ],
 
       github: "https://github.com/achraf27/inventory-app",
-      Lien: "https://inventory-app-b1xc-kvtk657ev-achraf27s-projects.vercel.app",
+      Lien: "https://inventory-app-drab-mu.vercel.app",
 
       features: [
         "Authentification sécurisée avec gestion des rôles (Admin / Utilisateur)",
