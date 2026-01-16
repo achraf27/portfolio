@@ -32,7 +32,9 @@ const CONFIG = {
         "Node.js",
         "PostgreSQL",
         "Bootstrap",
-        "JWT"
+        "JWT",
+        "Vercel",
+        "Render"
       ],
       image: inventory,
       images: [
