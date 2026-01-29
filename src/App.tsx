@@ -77,7 +77,6 @@ const CONFIG = {
     la communication entre le frontend et le backend, ainsi que le déploiement de l’application.
 
     Il m’a permis de gagner en confiance et de mieux comprendre les problématiques rencontrées dans une application professionnelle.
-    Pour demmarer le backend, veuillez entrer ce lien dans un nouvel onglet : https://inventory-app-ospi.onrender.com/.
     `,
     credentials: {
     admin: {
@@ -88,7 +87,8 @@ const CONFIG = {
       username: "MarieMartin",
       password: "password123"
     }
-  }
+  },
+  backendLink: "https://inventory-app-ospi.onrender.com/"
     },
 
  {
@@ -529,6 +529,21 @@ useEffect(() => {
           </p>
         </>
       )}
+
+      {selectedProject.backendLink && (
+  <p className={`mb-6 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+    Pour démarrer le backend :{' '}
+    <a
+      href={selectedProject.backendLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-orange-500 hover:text-orange-600 underline"
+    >
+      {selectedProject.backendLink}
+    </a>
+  </p>
+)}
+
 
 
 
