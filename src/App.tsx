@@ -77,6 +77,7 @@ const CONFIG = {
     la communication entre le frontend et le backend, ainsi que le déploiement de l’application.
 
     Il m’a permis de gagner en confiance et de mieux comprendre les problématiques rencontrées dans une application professionnelle.
+    Pour demmarer le backend, veuillez entrer ce lien dans un nouvel onglet : https://inventory-app-ospi.onrender.com/.
     `,
     credentials: {
     admin: {
