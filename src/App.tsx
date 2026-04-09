@@ -11,17 +11,54 @@ import pageblockerMain from './assets/pageblocker_1.png'
 import pageblocker2 from './assets/pageblocker_2.png'
 import pageblocker3 from './assets/pageblocker_3.png'
 
+import iotDashboard from './assets/dashboard.png'
+
 
 const CONFIG = {
-  name: "AIT DAOUD  Achraf",
-  title: "Développeur Full Stack",
-  description: "Passionné par la création de solutions modernes et performantes",
+  name: "AIT DAOUD Achraf",
+  title: "Full Stack · Embarqué · IoT",
+  description: "Attiré par les systèmes embarqués, l'IoT, les architectures distribuées et le développement logiciel",
   email: "aitdaoudachraf@gmail.com",
   github: "https://github.com/achraf27",
-  linkedin: "https://www.linkedin.com/in/achraf-ait-daoud-129a04355/",
+  linkedin: "https://www.linkedin.com/in/ait-daoud-achraf-129a04355/",
   
   projects: [
-   
+   {
+  id: 4,
+  title: "Simulateur de capteurs IoT",
+  description: "Pipeline IoT simulant des capteurs environnementaux et persistant les données via MQTT",
+  tech: ["Python", "MQTT", "Node.js", "SQLite"],
+  image: iotDashboard,
+  images: [
+        iotDashboard
+      ],
+  github: "https://github.com/achraf27/iot-sensor-simulator",
+  features: [
+    "Simulation de capteurs température (-10°C à +50°C) et humidité (30-80%)",
+    "Publication des données toutes les 4 secondes via protocole MQTT",
+    "Souscription Node.js au broker EMQX et réception en temps réel",
+    "Persistance des données capteurs dans une base SQLite"
+  ],
+  challenges: [
+    "Comprendre et implémenter le protocole MQTT et l'architecture publish/subscribe",
+    "Synchronisation entre le publisher Python et le subscriber Node.js",
+    "Gestion des reconnexions et de la fiabilité du broker"
+  ],
+  competences: [
+    "Protocole MQTT et communication IoT",
+    "Architecture publish/subscribe",
+    "Simulation de flux de données capteurs",
+    "Persistance de données temps réel"
+  ],
+  pourquoi: `
+  J'ai initié ce projet pour explorer concrètement les problématiques IoT sans avoir de matériel physique.
+
+  L'idée était de simuler un vrai pipeline de données : un capteur publie des mesures via MQTT, 
+  un serveur souscrit au topic et stocke les données en base — exactement ce qu'on retrouve dans des architectures industrielles réelles.
+
+  Ce projet m'a permis de comprendre les protocoles de communication IoT et l'architecture distribuée publish/subscribe.
+  `
+},
   {
       id: 1,
       title: "Logiciel de gestion d'inventaire",
@@ -183,7 +220,7 @@ const CONFIG = {
 skillsCategories: [
     {
       title: "Langages",
-      skills: ["JavaScript / TypeScript","C++", "Python", "Java", "Dart", "PHP"]
+      skills: ["C++", "Python", "JavaScript / TypeScript","Java", "Dart", "PHP"]
     },
     {
       title: "Frontend",
@@ -312,6 +349,7 @@ useEffect(() => {
       </section>
 
 
+
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -428,7 +466,7 @@ useEffect(() => {
       {/* Footer */}
       <footer className={`py-8 text-center ${darkMode ? 'bg-gray-900 border-t border-gray-800' : 'bg-gray-50 border-t border-gray-200'}`}>
         <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
-          © 2025 {CONFIG.name}. Tous droits réservés.
+          © 2026 {CONFIG.name}. Tous droits réservés.
         </p>
       </footer>
 
