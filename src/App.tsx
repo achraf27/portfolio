@@ -64,7 +64,7 @@ const CONFIG = {
 J'ai initié ce projet pour explorer concrètement les problématiques IoT sans avoir de matériel physique.
 
 L'idée était de simuler un vrai pipeline de données : un capteur publie des mesures via MQTT,
-un serveur souscrit au topic et stocke les données en base — exactement ce qu'on retrouve dans des architectures industrielles réelles.
+un serveur souscrit au topic et stocke les données en base   exactement ce qu'on retrouve dans des architectures industrielles réelles.
 
 Ce projet m'a permis de comprendre les protocoles de communication IoT et l'architecture distribuée publish/subscribe.
       `
@@ -281,7 +281,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto w-full">
           <div className="grid md:grid-cols-5 gap-16 items-center">
 
-            {/* Left — text */}
+            {/* Left   text */}
             <div className="md:col-span-3 animate-fade-in-up">
 
               {/* Badge disponibilité */}
@@ -347,7 +347,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right — terminal card */}
+            {/* Right   terminal card */}
             <div className="hidden md:flex md:col-span-2 justify-center animate-fade-in anim-delay-400">
               <div
                 className={`w-full max-w-xs rounded-2xl overflow-hidden border ${
@@ -529,7 +529,7 @@ export default function App() {
             Travaillons<br />ensemble
           </h2>
           <p className={`text-lg mb-12 leading-relaxed ${dm ? 'text-gray-400' : 'text-gray-500'}`}>
-            Que ce soit pour une opportunité, un projet ou simplement pour échanger — mon inbox est ouvert.
+            Que ce soit pour une opportunité, un projet ou simplement pour échanger   mon inbox est ouvert.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
