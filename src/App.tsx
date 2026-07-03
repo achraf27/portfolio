@@ -288,8 +288,8 @@ export default function App() {
               {/* Badge disponibilité */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-green-500/30 text-green-500 bg-green-500/5">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                Disponible pour des opportunités
-              </div>
+                Opérationel pour une alternance
+                </div>
 
               {/* Nom */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-4">
@@ -525,7 +525,6 @@ export default function App() {
       {/* ── Contact ─────────────────────────────────────────────────────── */}
       <section id="contact" className={`py-24 px-6 ${dm ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs font-bold text-green-500 uppercase tracking-widest mb-3">On se connecte ?</p>
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             Travaillons<br />ensemble
           </h2>
