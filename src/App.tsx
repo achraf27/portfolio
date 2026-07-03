@@ -526,10 +526,10 @@ export default function App() {
       <section id="contact" className={`py-24 px-6 ${dm ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
-            Travaillons<br />ensemble
+            Échangeons<br />ensemble
           </h2>
           <p className={`text-lg mb-12 leading-relaxed ${dm ? 'text-gray-400' : 'text-gray-500'}`}>
-            Je suis actuellement à la recherche d’une alternance de 36 mois en Île-de-France, dans le cadre de mon admission à l’ENSEA.
+            Vous pouvez me contacter pour une opportunité d’alternance, un échange ou toute information complémentaire.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
