@@ -28,8 +28,8 @@ import iotDashboard from './assets/dashboard.png'
 
 const CONFIG = {
   name: "AIT DAOUD Achraf",
-  title: "Full Stack · Embarqué · IoT",
-  description: "Attiré par les systèmes embarqués, l'IoT, les architectures distribuées et le développement logiciel",
+  title: "Développement logiciel · IoT · Systèmes communicants",
+  description: "Admis à l’ENSEA en cycle ingénieur par apprentissage, je recherche une alternance de 36 mois en développement logiciel, IoT, systèmes embarqués ou systèmes communicants.",
   email: "aitdaoudachraf@gmail.com",
   github: "https://github.com/achraf27",
   linkedin: "https://www.linkedin.com/in/ait-daoud-achraf-129a04355/",
@@ -181,12 +181,13 @@ Au final j'ai pu produire un outil fonctionnel, que j'ai par ailleurs publié su
     }
   ],
 
-  skillsCategories: [
-    { title: "Langages",             skills: ["C++", "Python", "JavaScript / TypeScript", "Java", "Dart", "PHP"] },
-    { title: "Frontend",             skills: ["React.js", "Angular", "Flutter", "Tailwind CSS", "Bootstrap"] },
-    { title: "Backend",              skills: ["Express.js", "Node.js", "Laravel", "Nest.js"] },
-    { title: "Bases de données",     skills: ["PostgreSQL", "MongoDB"] },
-    { title: "Outils / Méthodes",   skills: ["Git", "Docker", "Méthode Agile"] }
+ skillsCategories: [
+    { title: "Langages", skills: ["Python", "C++", "JavaScript / TypeScript", "Dart", "Java", "PHP", "WinDev"] },
+    { title: "Développement logiciel", skills: ["API REST", "Tests unitaires", "Architecture applicative", "Automatisation"] },
+    { title: "Web & API", skills: ["React.js", "Node.js", "Express.js", "Flask", "Angular", "Laravel"] },
+    { title: "IoT & systèmes", skills: ["MQTT", "EMQX", "Simulation de capteurs", "Publisher / Subscriber"] },
+    { title: "Bases de données", skills: ["PostgreSQL", "SQLite", "SQL", "MongoDB"] },
+    { title: "Outils / Méthodes", skills: ["Git", "Docker", "Postman", "n8n", "Méthode Agile"] }
   ]
 };
 
@@ -301,7 +302,7 @@ export default function App() {
 
               {/* Titre */}
               <p className={`text-lg md:text-xl font-semibold mb-5 ${dm ? 'text-gray-300' : 'text-gray-700'}`}>
-                Full Stack &nbsp;·&nbsp; Embarqué &nbsp;·&nbsp; IoT
+                Développement logiciel &nbsp;·&nbsp; IoT &nbsp;·&nbsp; Systèmes communicants
               </p>
 
               {/* Description */}
@@ -369,16 +370,16 @@ export default function App() {
                     <span className="text-green-500">$ </span>
                     <span className={dm ? 'text-gray-300' : 'text-gray-600'}>whoami</span>
                   </div>
-                  <div className={`pl-4 ${dm ? 'text-gray-400' : 'text-gray-500'}`}>Développeur Full Stack</div>
+                  <div className={`pl-4 ${dm ? 'text-gray-400' : 'text-gray-500'}`}>Développeur logiciel orienté IoT</div>
 
                   <div className="pt-1">
                     <span className="text-green-500">$ </span>
                     <span className={dm ? 'text-gray-300' : 'text-gray-600'}>skills --top</span>
                   </div>
                   <div className={`pl-4 space-y-1 ${dm ? 'text-gray-400' : 'text-gray-500'}`}>
-                    <div><span className="text-green-400">▸ </span>React, Node.js</div>
-                    <div><span className="text-green-400">▸ </span>Python, MQTT, IoT</div>
-                    <div><span className="text-green-400">▸ </span>C++, Embarqué</div>
+                    <div><span className="text-green-400">▸ </span>Python, C++, TypeScript</div>
+                    <div><span className="text-green-400">▸ </span>API REST, Docker, PostgreSQL</div>
+                    <div><span className="text-green-400">▸ </span>MQTT, IoT, systèmes communicants</div>
                   </div>
 
                   <div className="pt-1">
@@ -529,7 +530,7 @@ export default function App() {
             Travaillons<br />ensemble
           </h2>
           <p className={`text-lg mb-12 leading-relaxed ${dm ? 'text-gray-400' : 'text-gray-500'}`}>
-            Que ce soit pour une opportunité, un projet ou simplement pour échanger   mon inbox est ouvert.
+            Je suis actuellement à la recherche d’une alternance de 36 mois en Île-de-France, dans le cadre de mon admission à l’ENSEA.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
